@@ -1,0 +1,21 @@
+{% extends 'blog/main.html' %}
+{% block main_section %}
+    {% for post in news %}
+      <h1>{{ post.title }}</h1>
+      <p>{{ post.text }}</p
+      {% if post.author %}
+        <p>Author: {{ post.author }}</p>
+      {% else %}
+        <p>Author: Admin</p>
+      {% endif %}
+      <p>Date: {{ post.date }}</p>
+    {% endfor %}
+{% endblock main_section %}
+
+{% block aside_news_section %}
+<h3><b> Bio </b></h3>
+<p>My name is Artem Roy. I am 24 years-old and am from Moscow, Russia, currently studying computer science at BHCC as a part of my certificate program. I came to the USA when I was 14 and finished high school here at Worcester Academy. I already have a Bachelors of Science in Business Administration, concentration in  Finance & Entrepreneurship, graduating from Boston University in 2015. I plan on getting master's in Applied Business Analytics at BU future after I get my CS certificate here at Bunker Hill.</p>
+<a href="https://bhcc.digication.com/artem_roy_philosophy_portfolio" targget="_blank">
+  <button class="btn btn-warning">My ePortfolio</button>
+</a>
+{% endblock aside_news_section %}
